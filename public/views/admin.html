@@ -1,0 +1,29 @@
+<div class="main-container admin-page"  ng-controller="adminCtrl">
+  <div class="admin-menu-underlay">
+
+  </div>
+  <div class="admin-menu">
+    <div class="admin-menu-title">
+      MENU
+    </div>
+    <ul>
+      <li ng-click="showAddImages()">ADD IMAGE</li><br>
+      <li ng-click="showEditImages()">EDIT IMAGE</li><br>
+      <li ui-sref="home">HOME</li><br>
+      <li ui-sref="traditional">TRADITIONAL</li><br>
+      <li ui-sref="dimensional">DIMENSIONAL</li><br>
+      <li>STORE</li><br>
+      <li>BLOG</li><br>
+      <li ui-sref="about">ABOUT</li><br>
+      <li ui-sref="contact">CONTACT</li>
+    </ul>
+  </div>
+    <div class="admin-tab">
+      <add-image ng-show="addImagesVisibility"></add-image>
+    </div>
+    <div class="admin-tab">
+      <edit-image ng-show="editImagesVisibility"></edit-image>
+    </div>
+
+
+</div>

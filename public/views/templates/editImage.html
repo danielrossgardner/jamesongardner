@@ -1,0 +1,59 @@
+<div class="edit-image-container">
+  <div class="edit-image-form" ng-repeat="image in images | orderBy: '-id'">
+    <div class="delete-image-form" ng-mouseleave="deleteBoxVisibility=false; deleteConfirmVisibility=false" ng-mouseleave="deleteConfirmVisibility=false">
+      <div class="delete-image-image">
+        <img ng-src="{{image.imageurl}}" alt={{image.title}} />
+      </div>
+      <div class="delete-image-delete"  ng-mouseenter="deleteBoxVisibility=true">
+        <svg ng-show="deleteBoxVisibility" ng-click="deleteConfirmVisibility=!deleteConfirmVisibility; deleteBoxVisibility = !deleteBoxVisibility" width="60px" height="60px">
+          <circle cx="30" cy="30" r="20" fill="red" />
+          <line x1="20" y1="20" x2="40" y2="40" stroke="white" stroke-width="2" />
+          <line x1="20" y1="40" x2="40" y2="20" stroke="white" stroke-width="2" />
+        </svg>
+        <div class="delete-confirm-container" ng-show="deleteConfirmVisibility">
+          <input type="button" name="DELETE" value="DELETE" class="delete-confirm delete-confirm-button" ng-click="deleteImage(image.id)">
+          <input type="button" name="CANCEL" value="CANCEL"class="delete-cancel delete-confirm-button" ng-click="deleteConfirmVisibility=!deleteConfirmVisibility; deleteBoxVisibility = !deleteBoxVisibility">
+        </div>
+      </div>
+    </div>
+    <div class="edit-controls">
+      <form class="edit-holder title-holder" ng-submit="editTitle(image.id,newTitle)" name="editTitleForm" ng-mouseenter="editTitleValue=true" ng-mouseleave="editTitleValue=false; editTitleSubmit=false" autocomplete="off">
+        <div class="edit-title-title edit-primary-block">
+          TITLE
+        </div>
+        <div class="edit-title-value  edit-secondary-block" ng-show="editTitleValue">
+          {{image.title}}
+          <input class="edit-input edit-title-input" type="text" name="title" placeholder="edit title" ng-click="editTitleSubmit=true" ng-model="newTitle">
+        </div>
+        <input class="edit-title-submit edit-submit-button" type="submit" value="Submit" ng-show="editTitleSubmit">
+      </form>
+
+      <form class="edit-holder type-holder" ng-submit="editType(image.id,newType)" name="editTypeForm" ng-mouseenter="editTypeValue=true" ng-mouseleave="editTypeValue=false; editTypeSubmit=false" autocomplete="off">
+        <div class="edit-type-title edit-primary-block">
+          TYPE
+        </div>
+        <div class="edit-type-value  edit-secondary-block" ng-show="editTypeValue">
+          {{image.type}}
+          <select class="edit-input edit-type-input" name="type" ng-click="editTypeSubmit=true" ng-model="newType">
+            <option value="traditional">traditional</option>
+            <option value="dimensional">dimensional</option>
+          </select>
+        </div>
+        <input class="edit-type-submit edit-submit-button" type="submit" value="Submit" ng-show="editTypeSubmit">
+      </form>
+
+      <form class="edit-holder description-holder" ng-submit="editDescription(image.id,newDescription)" name="editDescriptionForm" ng-mouseenter="editDescriptionValue=true" ng-mouseleave="editDescriptionValue=false; editDescriptionSubmit=false" autocomplete="off">
+        <div class="edit-description-title edit-primary-block">
+          DESCRIPTION
+        </div>
+        <div class="edit-description-value  edit-secondary-block" ng-show="editDescriptionValue">
+          {{image.description}}
+          <input class="edit-input edit-description-input" type="text" name="description" placeholder="edit description" ng-click="editDescriptionSubmit=true" ng-model="newDescription">
+        </div>
+        <input class="edit-description-submit edit-submit-button" type="submit" value="Submit" ng-show="editDescriptionSubmit">
+      </form>
+
+    </div>
+  </div>
+
+</div>
