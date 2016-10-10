@@ -2,21 +2,16 @@
   <div class="add-image-title">
     ADD IMAGE
   </div>
-  <br>
   <div class="add-image-form">
     <form edit-image ng-submit="addImage(); getAllImages()" name="addImageForm">
       <input class="add-image-input" placeholder="Title" ng-model="imageTitle"/>
-      <br>
       <select class="add-image-input" ng-model="imageType">
         <option value="traditional">traditional</option>
         <option value="dimensional">dimensional</option>
       </select>
-      <br>
       <input class="add-image-input" placeholder="Image Url" ng-model="imageUrl"/>
-      <br>
-      <input class="add-image-input" placeholder="Description" ng-model="description"/>
-      <br>
-      <input class="btn btn-primary add-image-input" type="submit" value="Submit"/>
+      <textarea class="add-image-input add-image-description" placeholder="Description" ng-model="description"/>
+      <input class="btn btn-primary add-image-input add-submit-button" type="submit" value="Submit"/>
     </form>
   </div>
   <div class="add-image-form-footer">

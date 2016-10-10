@@ -1,20 +1,41 @@
-angular.module('jamesonart').controller('homeCtrl', function($scope, primaryService, $state, $timeout) {
+angular.module('jamesonart').controller('homeCtrl', function($scope, primaryService, $timeout) {
+  $scope.traditionalVisibility = true;
+  $scope.dimensionalVisibility = true;
+  $scope.storeVisibility = true;
+  $scope.blogVisibility = true;
+  $scope.aboutVisibility = true;
+  $scope.contactVisibility = true;
+
+  var showTraditional = function() {
+    $scope.traditionalVisibility = false;
+  };
+
+  var showDimensional = function() {
+    $scope.dimensionalVisibility = false;
+  };
+
+  var showStore = function() {
+    $scope.storeVisibility = false;
+  };
+
+  var showBlog = function() {
+    $scope.blogVisibility = false;
+  };
+
+  var showAbout = function() {
+    $scope.aboutVisibility = false;
+  };
+
+  var showContact = function() {
+    $scope.contactVisibility = false;
+  };
 
 
-  $scope.loginLocal = function(username, password) {
-    primaryService.loginLocal({
-      username: username,
-      password: password
-    })
-    .then(function(res) {
-      if (res) {
-        $scope.user = res.username;
-        $state.go('admin');
-        }
-      else   $scope.user = 'NOT LOGGED IN';
-    })
-  }
+  $timeout(showTraditional, 2400);
+  $timeout(showDimensional, 2000);
+  $timeout(showStore, 1600);
+  $timeout(showBlog, 1200);
+  $timeout(showAbout, 800);
+  $timeout(showContact, 400);
 
-  $scope.logout = primaryService.logout;
-
-})
+});

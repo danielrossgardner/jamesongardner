@@ -56,15 +56,41 @@
 
 /************************-ADD IMAGE FORM-************************/
 .add-image-form-container {
-  background: white;
   position: relative;
   z-index: 2;
   width: 400px;
-  border: 1px solid yellow;
+}
+.add-image-title {
+  height: 50px;
+  padding-top: 15px;
+  font-family: 'Pragati Narrow', sans-serif;
+  letter-spacing: 2px;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  background: #4CAF50;
 }
 .add-image-input {
+  width: 398px;
+  height: 25px;
+  font-family: 'Raleway', sans-serif;
+  margin: auto;
   display:block;
-  width: 350px;
+  margin-bottom: 2px;
+  border: none;
+}
+.add-image-description {
+  height: 100px;
+}
+
+.add-submit-button {
+  height: inherit;
+  border: none;
+  background: #0083ff;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  font-size: 20px;
+  border-radius: 0;
 }
 /************************----------------************************/
 
@@ -103,8 +129,7 @@
   margin-bottom: 2px;
 }
 .delete-image-delete:hover {
-  background: black;
-  opacity: .8;
+  background: rgba(0,0,0,0.8);
 }
 .delete-image-delete svg {
   margin: auto;

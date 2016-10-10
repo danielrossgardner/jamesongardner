@@ -2,19 +2,35 @@
   <div class="home-page-container">
     <div class="home-page-image-container">
       <div class="home-page-image-background">
-        <div class="home-page-image">
+        <div class="home-page-image" ng-class="{dimensional: dimensionalHover
+          , traditional: traditionalHover
+          , store: storeHover
+          , blog: blogHover
+          , about: aboutHover
+          , contact: contactHover}">
 
         </div>
       </div>
     </div>
     <div class="menu-items-desk">
       <ul>
-        <li ui-sref="traditional">TRADITIONAL</li>
-        <li ui-sref="dimensional">DIMENSIONAL</li>
-        <li>STORE</li>
-        <li>BLOG</li>
-        <li ui-sref="about">ABOUT</li>
-        <li ui-sref="contact">CONTACT</li>
+        <li class="fadein fadeout" ui-sref="traditional" ng-hide="traditionalVisibility" ng-mouseenter="traditionalHover = true" ng-mouseleave="traditionalHover = false">TRADITIONAL</li>
+        <li ng-show="traditionalVisibility"></li>
+
+        <li class="fadein fadeout" ui-sref="dimensional" ng-hide="dimensionalVisibility" ng-mouseenter="dimensionalHover = true" ng-mouseleave="dimensionalHover = false">DIMENSIONAL</li>
+        <li ng-show="dimensionalVisibility"></li>
+
+        <li class="fadein fadeout" ng-hide="storeVisibility" ng-mouseenter="storeHover = true" ng-mouseleave="storeHover = false">STORE</li>
+        <li ng-show="storeVisibility"></li>
+
+        <li class="fadein fadeout" ng-hide="blogVisibility" ng-mouseenter="blogHover = true" ng-mouseleave="blogHover = false">BLOG</li>
+        <li ng-show="blogVisibility"></li>
+
+        <li class="fadein fadeout" ui-sref="about" ng-hide="aboutVisibility" ng-mouseenter="aboutHover = true" ng-mouseleave="aboutHover = false">ABOUT</li>
+        <li ng-show="aboutVisibility"></li>
+
+        <li class="fadein fadeout" ui-sref="contact" ng-hide="contactVisibility" ng-mouseenter="contactHover = true" ng-mouseleave="contactHover = false">CONTACT</li>
+        <li ng-show="contactVisibility"></li>
       </ul>
     </div>
   </div>

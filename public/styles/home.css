@@ -17,6 +17,44 @@
   background-repeat: no-repeat;
   margin: auto;
 }
+.traditional{
+  background: url("../images/HomePageprevTraditional.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: auto;
+}
+.dimensional{
+  background: url("../images/HomePageprevDimensional.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: auto;
+}
+.store{
+  background: url("../images/HomePageprevStore.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: auto;
+}
+.blog{
+  background: url("../images/HomePageprevBlog.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: auto;
+}
+.about{
+  background: url("../images/HomePageprevAbout.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: auto;
+}
+.contact{
+  background: url("../images/HomePageprevContact.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: auto;
+}
+
+
 .menu-items-desk{
   display: none;
 }
@@ -54,7 +92,12 @@
     letter-spacing: 2px;
     font-size: 25px;
   }
+  .menu-items-desk ul {
+    width: 162px;
+    height: 375px;
+  }
   .menu-items-desk li {
+    height: 35px;
     padding-bottom: 10px;
     cursor: pointer;
   }
@@ -77,4 +120,24 @@
   .menu-items-desk li:nth-child(n+5){
     padding-left: 25px;
   }
+}
+
+
+.fadein.ng-hide-remove,
+.fadeout.ng-hide-add {
+    -webkit-transition: 800ms ease-in-out all;
+    -moz-transition: 800ms ease-in-out all;
+    -o-transition: 800ms ease-in-out all;
+    transition: 800ms ease-in-out all;
+    display: block !important;
+}
+
+.fadein.ng-hide-remove,
+.fadeout.ng-hide-add.ng-hide-add-active {
+    opacity: 0;
+}
+
+.fadeout.ng-hide-add,
+.fadein.ng-hide-remove.ng-hide-remove-active {
+    opacity: 1;
 }

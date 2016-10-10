@@ -12,18 +12,28 @@
     <link rel="stylesheet" href="./styles/admin.css">
     <link rel="stylesheet" href="./styles/masonry.css">
   </head>
-  <body>
+  <body ng-controller="indexCtrl">
       <div class="page-container">
         <header>
-          <div class="mobile-menu menu-holder">
+          <div class="menu-placeholder">
+          </div>
+          <div class="primary-logo" move-primary-logo>
 
           </div>
-          <div class="mobile-menu primary-logo">
-
-          </div>
-          <div class="mobile-menu HAM">
+          <div ng-mouseleave="menuVisibility=false" class="HAM" ng-click="menuVisibility = !menuVisibility">
           </div>
         </header>
+        <div ng-show="menuVisibility" class="mobile-menu">
+          <ul>
+            <li ui-sref="home">HOME</li>
+            <li ui-sref="traditional">TRADITIONAL</li>
+            <li ui-sref="dimensional">DIMENSIONAL</li>
+            <li>STORE</li>
+            <li>BLOG</li>
+            <li ui-sref="about">ABOUT</li>
+            <li ui-sref="contact">CONTACT</li>
+          </ul>
+        </div>
 
         <ui-view></ui-view>
 
@@ -77,18 +87,19 @@
           </div>
         </footer>
       </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.min.js"></script>
+    <script src="http://imagesloaded.desandro.com/imagesloaded.pkgd.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.min.js"></script>
-    <script src="http://imagesloaded.desandro.com/imagesloaded.pkgd.js"></script> -->
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.1.4/ui-bootstrap-tpls.js"></script>
 
     <script src="./js/app.js"></script>
+    <script src="./js/controllers/indexCtrl.js"></script>
     <script src="./js/controllers/homeCtrl.js"></script>
     <script src="./js/controllers/adminCtrl.js"></script>
     <script src="./js/controllers/traditionalCtrl.js"></script>
@@ -97,7 +108,8 @@
     <script src="./js/service/primaryservice.js"></script>
     <script src="./js/directives/addImage.js"></script>
     <script src="./js/directives/editImage.js"></script>
-
-    <!-- <script src="./js/masonry.js"></script> -->
+    <script src="./js/directives/movePrimaryLogo.js"></script>
+    <script src="./js/directives/masonry.js"></script>
+    
   </body>
 </html>

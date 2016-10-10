@@ -1,12 +1,10 @@
 /* .primary-logo overriding .primary-logo on main-page */
 .art-container {
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: auto;
 }
 
 .grid {
-  width: 770px;
-  margin: auto;
+  width: 100%;
 }
 
 .grid:after {
@@ -16,7 +14,7 @@
 }
 .grid-sizer,
 .grid-item {
-  width: 30%;
+  width: 100%;
 }
 
 .grid-item {
@@ -27,4 +25,37 @@
 .grid-item img {
   display: block;
   max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .art-container {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .grid {
+    width: 770px;
+    margin: auto;
+  }
+
+  .grid:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .grid-sizer,
+  .grid-item {
+    width: 30%;
+  }
+
+  .grid-item {
+    float:left;
+    margin-bottom: 5px;
+  }
+
+  .grid-item img {
+    display: block;
+    max-width: 100%;
+  }
+
 }

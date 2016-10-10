@@ -8,4 +8,5 @@ angular.module('jamesonart').controller('traditionalCtrl',function($scope,primar
   }
 
   $scope.getArt('traditional');
+
 });
