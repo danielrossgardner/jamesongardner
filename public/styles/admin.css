@@ -1,11 +1,9 @@
 .admin-page {
   flex-direction: row;
   justify-content: flex-start;
-  padding-top: 0px;
   z-index: 3;
   overflow-y: auto;
   overflow-x: hidden;
-  margin-top: 50px;
 }
 .admin-menu-underlay {
   width: 150px;
@@ -182,13 +180,19 @@
 
 .edit-secondary-block {
   width: 200px;
-  height: 50px;
+  min-height: 50px;
   position: relative;
   padding-top: 5px;
   font-family: 'Raleway', sans-serif;
   text-align: center;
   background: #ffffff;
   margin-bottom: 1px;
+}
+.edit-description-value {
+  text-align: left;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-bottom: 25px;
 }
 
 .edit-input {

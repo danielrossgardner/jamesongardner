@@ -8,7 +8,8 @@ angular.module('jamesonart')
          // MODAL IMAGE STUFF //
 
         $scope.showModal = function(id,images) {
-          if (window.screen.availWidth > 768) return;
+          if (window.screen.availWidth < 768) return;
+
           $scope.opts = {
           backdrop: true,
           backdropClick: true,

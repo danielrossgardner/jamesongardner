@@ -14,11 +14,13 @@ angular.module('jamesonart')
                  gutter: 10
                })
 
+               $grid.imagesLoaded(function () {
+                 $timeout(function() {
+                   $('.grid').masonry('reloadItems');
+                   $('.grid').masonry('layout');
+                 },500)
+              });
 
-           $timeout(function() {
-             $('.grid').masonry('reloadItems');
-             $('.grid').masonry('layout');
-           },500)
 
            $timeout(function() {
              $('.loader-holder').css('display', 'none');
