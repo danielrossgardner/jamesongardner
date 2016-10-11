@@ -1,4 +1,4 @@
-angular.module('jamesonart').controller('adminCtrl', function($scope, $state) {
+angular.module('jamesonart').controller('adminCtrl', function($scope, $state, primaryService) {
 
   $scope.addImagesVisibility = false;
   $scope.editImagesVisibility = false;
@@ -12,5 +12,7 @@ angular.module('jamesonart').controller('adminCtrl', function($scope, $state) {
     $scope.addImagesVisibility = false
     $scope.editImagesVisibility = !$scope.editImagesVisibility
   }
+
+  $scope.logout = primaryService.logout;
 
 });

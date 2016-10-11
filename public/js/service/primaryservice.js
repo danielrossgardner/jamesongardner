@@ -1,4 +1,23 @@
-angular.module('jamesonart').service('primaryService', function($http){
+angular.module('jamesonart').service('primaryService', function($http,$state){
+
+  function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+  }
 
   this.loginLocal = function(credentials) {
     return $http({
@@ -33,7 +52,7 @@ angular.module('jamesonart').service('primaryService', function($http){
       url: '/auth/logout'
     })
     .then(function(res) {
-      return res.data;
+      $state.go('home')
     })
     .catch(function(err) {
       console.log('service logout error: ',err);
@@ -46,7 +65,7 @@ angular.module('jamesonart').service('primaryService', function($http){
       method: 'GET',
       url: url
     }).then(function(res){
-      return res.data;
+      return shuffle(res.data);
     });
   };
 

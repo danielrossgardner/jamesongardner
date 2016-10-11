@@ -2,3 +2,27 @@
 @import 'https://fonts.googleapis.com/css?family=Raleway:100';
 
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+.btn {
+  border-radius: 0;
+  border: none;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+}
+.btn-primary {
+  background-color: #0083ff;
+}
+
+.btn-primary:focus {
+  outline:0;
+}
+
+.btn:focus {
+  outline:0;
+}
+
+.modal-content {
+  background: none;
+  border: none;
+  box-shadow: none;
+}

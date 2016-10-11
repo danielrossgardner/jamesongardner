@@ -3,7 +3,7 @@ angular.module('jamesonart')
     return {
        restrict: 'EA',
        scope: true,
-       controller: function ($scope) {
+       controller: function ($scope,$timeout) {
          angular.element(document).ready(function () {
            var $grid = $('.grid');
 
@@ -11,15 +11,21 @@ angular.module('jamesonart')
                  itemSelector: '.grid-item',
                  columnWidth: '.grid-sizer',
                  percentPosition: true,
-                 gutter: 5
+                 gutter: 10
                })
 
-           $grid.imagesLoaded(function() {
-             // $('.grid').masonry('reloadItems');
+
+           $timeout(function() {
+             $('.grid').masonry('reloadItems');
              $('.grid').masonry('layout');
-           });
+           },500)
+
+           $timeout(function() {
+             $('.loader-holder').css('display', 'none');
+           },1500)
 
          });
+
        }
     }
 });

@@ -122,6 +122,11 @@
   }
 }
 
+.menu-items-desk li a {
+  text-decoration: none;
+  color: inherit;
+}
+
 
 .fadein.ng-hide-remove,
 .fadeout.ng-hide-add {

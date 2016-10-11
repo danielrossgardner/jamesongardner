@@ -81,9 +81,24 @@ footer {
   flex-direction: row;
   justify-content:space-between;
 }
+
 .admin-modal-container {
   position: relative;
 }
+
+.modal-title {
+  font-family: 'Pragati Narrow', sans-serif;
+}
+
+.modal-body {
+  font-family: 'Raleway', sans-serif;
+}
+
+.modal-footer {
+  font-family: 'Raleway', sans-serif;
+}
+
+
 .admin-button:focus {outline:0;}
 .admin-button {
   height: 46px;
@@ -171,6 +186,7 @@ footer {
     flex-direction: row;
     justify-content: center;
   }
+
 }
 /*@media (min-width: 924px) {}*/
 /*@media (min-width: 1100px) {}*/

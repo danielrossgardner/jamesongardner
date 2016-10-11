@@ -25,7 +25,7 @@
           {{image.title}}
           <input class="edit-input edit-title-input" type="text" name="title" placeholder="edit title" ng-click="editTitleSubmit=true" ng-model="newTitle">
         </div>
-        <input class="edit-title-submit edit-submit-button" type="submit" value="Submit" ng-show="editTitleSubmit">
+        <input class="btn-primary edit-title-submit edit-submit-button" type="submit" value="Submit" ng-show="editTitleSubmit">
       </form>
 
       <form class="edit-holder type-holder" ng-submit="editType(image.id,newType)" name="editTypeForm" ng-mouseenter="editTypeValue=true" ng-mouseleave="editTypeValue=false; editTypeSubmit=false" autocomplete="off">
@@ -39,7 +39,7 @@
             <option value="dimensional">dimensional</option>
           </select>
         </div>
-        <input class="edit-type-submit edit-submit-button" type="submit" value="Submit" ng-show="editTypeSubmit">
+        <input class="btn-primary edit-type-submit edit-submit-button" type="submit" value="Submit" ng-show="editTypeSubmit">
       </form>
 
       <form class="edit-holder description-holder" ng-submit="editDescription(image.id,newDescription)" name="editDescriptionForm" ng-mouseenter="editDescriptionValue=true" ng-mouseleave="editDescriptionValue=false; editDescriptionSubmit=false" autocomplete="off">
@@ -50,7 +50,7 @@
           {{image.description}}
           <input class="edit-input edit-description-input" type="text" name="description" placeholder="edit description" ng-click="editDescriptionSubmit=true" ng-model="newDescription">
         </div>
-        <input class="edit-description-submit edit-submit-button" type="submit" value="Submit" ng-show="editDescriptionSubmit">
+        <input class="btn-primary edit-description-submit edit-submit-button" type="submit" value="Submit" ng-show="editDescriptionSubmit">
       </form>
 
     </div>

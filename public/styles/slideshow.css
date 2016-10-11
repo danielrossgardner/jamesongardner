@@ -1,0 +1,29 @@
+.slideshow-container {
+  background-color: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.slideshow-image {
+  max-width: 770px;
+  max-height: calc(100% - 100px - 13.5vh);
+}
+
+.slideshow-image img{
+  display: block;
+  width: 100%;
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nav-button {
+  background: black;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
