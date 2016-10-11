@@ -1,16 +1,23 @@
-<div class="slideshow-container">
+<div class="main-container slideshow-container">
   <div class="nav-container">
-    <div class="nav-button">
-
+    <div class="nav-button nav-left" ng-click="navigateLeft(image.id)">
+      ❮
     </div>
   </div>
-  <div class="slideshow-image">
-    <img ng-src="{{image.imageurl}}" alt={{image.title}} />
+  <div class="slideshow-image-container">
+    <div class="slideshow-image-title">
+      {{image.title}}
+    </div>
+    <div class="slideshow-image">
+      <img ng-src="{{image.imageurl}}" alt={{image.title}} />
+    </div>
+    <div class="slideshow-image-description">
+      {{image.description}}
+    </div>
   </div>
-
   <div class="nav-container">
-    <div class="nav-button">
-
+    <div class="nav-button nav-right" ng-click="navigateRight(image.id)">
+      ❯
     </div>
   </div>
 

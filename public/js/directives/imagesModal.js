@@ -8,7 +8,7 @@ angular.module('jamesonart')
          // MODAL IMAGE STUFF //
 
         $scope.showModal = function(id,images) {
-
+          if (window.screen.availWidth > 768) return;
           $scope.opts = {
           backdrop: true,
           backdropClick: true,
@@ -33,7 +33,7 @@ angular.module('jamesonart')
               //on ok button press
             },function(){
               //on cancel button press
-              console.log("Modal Closed");
+              // console.log("Modal Closed");
             });
         };
 
@@ -48,9 +48,29 @@ angular.module('jamesonart').controller('imagesModalCtrl', function ($uibModalIn
 
   var pickSelectedImage = function(value) {
     return value.id === $scope.id;
-  }
+  };
 
-  $scope.image = $scope.images.filter(pickSelectedImage)[0]
+
+  $scope.image = $scope.images.filter(pickSelectedImage)[0];
+
+
+  $scope.navigateRight = function(id) {
+    var index = $scope.images.findIndex(function(value){
+      return value.id === id
+    });
+    index = index + 1 > $scope.images.length - 1 ? 0 : index + 1;
+    $scope.id = $scope.images[index].id;
+    $scope.image = $scope.images.filter(pickSelectedImage)[0];
+  };
+
+  $scope.navigateLeft = function(id) {
+    var index = $scope.images.findIndex(function(value){
+      return value.id === id
+    });
+    index = index - 1 < 0 ? $scope.images.length - 1 : index - 1;
+    $scope.id = $scope.images[index].id;
+    $scope.image = $scope.images.filter(pickSelectedImage)[0];
+  };
 
 
 });
