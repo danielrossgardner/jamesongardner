@@ -85,7 +85,7 @@ footer {
   flex-direction: row;
   justify-content:space-between;
 }
-.modal-content {
+.admin-modal {
   background: white;
 }
 .admin-modal-container {

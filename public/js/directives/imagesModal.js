@@ -51,8 +51,55 @@ angular.module('jamesonart').controller('imagesModalCtrl', function ($uibModalIn
     return value.id === $scope.id;
   };
 
+  var selectImage = function() {
+    $scope.image = $scope.images.filter(pickSelectedImage)[0];
+    getImageScale();
+  };
 
-  $scope.image = $scope.images.filter(pickSelectedImage)[0];
+
+
+  var imageAdjustX = function(origX,origY,scaleY) {
+      return (scaleY * origX) / origY;
+  };
+
+  var imageAdjustY = function(origX,origY,scaleX) {
+      return (scaleX * origY) / origX;
+  };
+
+  var getImageScale = function() {
+    var image,origDimension;
+
+    image = new Image();
+    image.src = $scope.image.imageurl
+    origDimension = {
+        width: image.naturalWidth,
+        height: image.naturalHeight
+    };
+
+    var boxDimension = {
+      width: 770,//$('.slideshow-image').width(),
+      height: window.innerHeight * .75//$('.slideshow-image').height()
+    }
+
+    if (origDimension.width < origDimension.height) {
+      $scope.scaleDimension = {
+        width: imageAdjustX(origDimension.width,origDimension.height,boxDimension.height),
+        height: boxDimension.height
+      }
+    }
+    else {
+      $scope.scaleDimension = {
+        width: boxDimension.width,
+        height: imageAdjustY(origDimension.width,origDimension.height,boxDimension.width)
+      }
+    }
+
+    // console.log(origDimension,$scope.scaleDimension,boxDimension);
+
+
+    $scope.infoX = (boxDimension.width - $scope.scaleDimension.width) / 2
+    $scope.infoY = (boxDimension.height - $scope.scaleDimension.height) / 2
+  };
 
 
   $scope.navigateRight = function(id) {
@@ -62,6 +109,9 @@ angular.module('jamesonart').controller('imagesModalCtrl', function ($uibModalIn
     index = index + 1 > $scope.images.length - 1 ? 0 : index + 1;
     $scope.id = $scope.images[index].id;
     $scope.image = $scope.images.filter(pickSelectedImage)[0];
+
+    getImageScale();
+
   };
 
   $scope.navigateLeft = function(id) {
@@ -71,7 +121,15 @@ angular.module('jamesonart').controller('imagesModalCtrl', function ($uibModalIn
     index = index - 1 < 0 ? $scope.images.length - 1 : index - 1;
     $scope.id = $scope.images[index].id;
     $scope.image = $scope.images.filter(pickSelectedImage)[0];
+
+    getImageScale();
+
   };
 
+  selectImage();
+
+  $( window ).resize(function() {
+    getImageScale();
+  });
 
 });

@@ -46,7 +46,7 @@
           <div class="admin-modal-container" ng-controller="loginCtrl as $ctrl">
             <button type="button" class="admin-button" ng-click="$ctrl.open()">A</br>D</br>M</br>I</br>N</button>
             <script type="text/ng-template" id="loginModal.html">
-              <form ng-submit="$ctrl.loginLocal(username, password)">
+              <form class="admin-modal" ng-submit="$ctrl.loginLocal(username, password)">
                 <div class="modal-header">
                     <h3 class="modal-title" id="modal-title">Admin Login</h3>
                 </div>

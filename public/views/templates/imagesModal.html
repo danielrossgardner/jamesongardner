@@ -1,25 +1,23 @@
 <div class="main-container slideshow-container">
-  <div class="nav-container">
-    <div class="nav-button nav-left" ng-click="navigateLeft(image.id)">
-      ❮
-    </div>
-  </div>
   <div class="slideshow-image-container">
-    <div class="slideshow-image-title">
-      {{image.title}}
+    <div class="nav-container nav-container-left">
+      <div class="nav-button nav-left" ng-click="navigateLeft(image.id)">
+        ❮
+      </div>
     </div>
-    <div class="slideshow-image">
-      <img ng-src="{{image.imageurl}}" alt={{image.title}} />
+    <div class="slideshow-image" style="background-image: url({{image.imageurl}})" ng-mouseover="infoVisible = true" ng-mouseleave="infoVisible = false">
+      <div class="slideshow-image-title" style="width: {{scaleDimension.width}}px; left: {{infoX}}px; top: {{infoY}}px" ng-show="infoVisible">
+        {{image.title}}
+      </div>
+      <div class="slideshow-image-description" style="width: {{scaleDimension.width}}px; left: {{infoX}}px; bottom: {{infoY}}px" ng-show="infoVisible">
+        {{image.description}}
+      </div>
     </div>
-    <div class="slideshow-image-description">
-      {{image.description}}
+
+    <div class="nav-container nav-container-right">
+      <div class="nav-button nav-right" ng-click="navigateRight(image.id)">
+        ❯
+      </div>
     </div>
   </div>
-  <div class="nav-container">
-    <div class="nav-button nav-right" ng-click="navigateRight(image.id)">
-      ❯
-    </div>
-  </div>
-
-
 </div>
