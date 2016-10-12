@@ -1,5 +1,4 @@
-@import 'https://fonts.googleapis.com/css?family=Pragati+Narrow';
-@import 'https://fonts.googleapis.com/css?family=Raleway:100';
+@import 'https://fonts.googleapis.com/css?family=Raleway:100,400,700';
 
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 

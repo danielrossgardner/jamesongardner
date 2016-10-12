@@ -88,8 +88,8 @@
   .menu-items-desk{
     display: block;
     padding-top: 80px;
-    font-family: 'Pragati Narrow', sans-serif;
-    letter-spacing: 2px;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 2.5px;
     font-size: 25px;
   }
   .menu-items-desk ul {
@@ -99,26 +99,27 @@
   .menu-items-desk li {
     height: 35px;
     padding-bottom: 10px;
-    cursor: pointer;
   }
 
   .menu-items-desk li:hover {
     position: relative;
-    color: rgb(115,48,48);
     top: 1px;
     right: 1px;
   }
-  .menu-items-desk li:nth-child(2){
+  .menu-items-desk li:nth-child(3){
     padding-left: 10px;
   }
-  .menu-items-desk li:nth-child(3){
+  .menu-items-desk li:nth-child(5){
     padding-left: 18px;
   }
-  .menu-items-desk li:nth-child(4){
+  .menu-items-desk li:nth-child(7){
     padding-left: 22px;
   }
-  .menu-items-desk li:nth-child(n+5){
-    padding-left: 25px;
+  .menu-items-desk li:nth-child(9){
+    padding-left: 19px;
+  }
+  .menu-items-desk li:nth-child(11){
+    padding-left: 13px;
   }
 }
 

@@ -18,4 +18,6 @@ angular.module('jamesonart').controller('indexCtrl', function($scope, primarySer
 
   $scope.logout = primaryService.logout;
 
+
+
 })

@@ -31,11 +31,11 @@ angular.module('jamesonart').controller('homeCtrl', function($scope, primaryServ
   };
 
 
-  $timeout(showTraditional, 2400);
-  $timeout(showDimensional, 2000);
-  $timeout(showStore, 1600);
-  $timeout(showBlog, 1200);
-  $timeout(showAbout, 800);
-  $timeout(showContact, 400);
+  $timeout(showTraditional, 400);
+  $timeout(showDimensional, 800);
+  $timeout(showStore, 1200);
+  $timeout(showBlog, 1600);
+  $timeout(showAbout, 2000);
+  $timeout(showContact, 2400);
 
 });

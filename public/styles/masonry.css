@@ -28,8 +28,12 @@
 
 @media (min-width: 768px) {
   .art-container {
+    height: calc(100vh - 281px);
     overflow-y: auto;
     overflow-x: hidden;
+    margin-top: 65px;
+    clear:both;
+    position: relative;
   }
 
   .grid {
@@ -44,7 +48,7 @@
   }
   .grid-sizer,
   .grid-item {
-    width: 30%;
+    width: 32%;
   }
 
   .grid-item {

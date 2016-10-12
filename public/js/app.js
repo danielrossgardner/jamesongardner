@@ -31,13 +31,13 @@ jamesonart.config(function($stateProvider,$urlRouterProvider){
     })
     .state('traditional',{
       url: '/traditional',
-      templateUrl: './views/traditional.html',
+      templateUrl: './views/portfolio.html',
       controller: 'traditionalCtrl',
       restricted: false
     })
     .state('dimensional',{
       url: '/dimensional',
-      templateUrl: './views/dimensional.html',
+      templateUrl: './views/portfolio.html',
       controller: 'dimensionalCtrl',
       restricted: false
     })

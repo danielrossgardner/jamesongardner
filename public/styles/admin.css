@@ -25,7 +25,8 @@
 }
 .admin-menu-title {
   text-align: center;
-  font-family: 'Pragati Narrow', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
   letter-spacing: 2px;
   font-size: 25px;
   border-bottom: 1px solid black;
@@ -61,7 +62,7 @@
 .add-image-title {
   height: 50px;
   padding-top: 15px;
-  font-family: 'Pragati Narrow', sans-serif;
+  font-family: 'Raleway', sans-serif;
   letter-spacing: 2px;
   font-size: 20px;
   color: white;
@@ -72,6 +73,7 @@
   width: 398px;
   height: 25px;
   font-family: 'Raleway', sans-serif;
+  font-weight: 100;
   margin: auto;
   display:block;
   margin-bottom: 2px;
@@ -135,6 +137,7 @@
 .delete-confirm-button {
   color: white;
   font-family: 'Raleway', sans-serif;
+  font-weight: 100;
   border: none;
   display: inline-block;
   position: relative;
@@ -171,7 +174,7 @@
   width: 200px;
   height: 50px;
   padding-top: 17px;
-  font-family: 'Pragati Narrow', sans-serif;
+  font-family: 'Raleway', sans-serif;
   letter-spacing: 2px;
   color: white;
   text-align: center;
@@ -184,6 +187,7 @@
   position: relative;
   padding-top: 5px;
   font-family: 'Raleway', sans-serif;
+  font-weight: 100;
   text-align: center;
   background: #ffffff;
   margin-bottom: 1px;
@@ -211,6 +215,7 @@
   border: none;
   background: #0083ff;
   font-family: 'Raleway', sans-serif;
+  font-weight: 100;
   color: white;
 }
 .edit-submit-button:focus {
