@@ -1,7 +1,9 @@
+.overflow{
+  overflow: hidden;
+}
 .art-container {
   overflow: auto;
 }
-
 .grid {
   width: 100%;
 }
@@ -62,7 +64,7 @@
   }
 
   /******************** LOADER ********************/
-  .loader-holder {
+  /*.loader-holder {
     width: 770px;
     height: calc(100% - 100px - 13.5vh);
     margin: auto;
@@ -130,7 +132,7 @@
     40% {
       box-shadow: 0 2.5em 0 0;
     }
-  }
+  }*/
   /************************************************/
 
 

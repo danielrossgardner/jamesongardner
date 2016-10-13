@@ -44,92 +44,100 @@ angular.module('jamesonart')
 });
 
 angular.module('jamesonart').controller('imagesModalCtrl', function ($uibModalInstance, $scope, item) {
-  $scope.id = item.id;
-  $scope.images = item.images
+  angular.element(document).ready(function () {
 
-  var pickSelectedImage = function(value) {
-    return value.id === $scope.id;
-  };
+    $scope.id = item.id;
+    $scope.images = item.images
 
-  var selectImage = function() {
-    $scope.image = $scope.images.filter(pickSelectedImage)[0];
-    getImageScale();
-  };
-
-
-
-  var imageAdjustX = function(origX,origY,scaleY) {
-      return (scaleY * origX) / origY;
-  };
-
-  var imageAdjustY = function(origX,origY,scaleX) {
-      return (scaleX * origY) / origX;
-  };
-
-  var getImageScale = function() {
-    var image,origDimension;
-
-    image = new Image();
-    image.src = $scope.image.imageurl
-    origDimension = {
-        width: image.naturalWidth,
-        height: image.naturalHeight
+    var pickSelectedImage = function(value) {
+      return value.id === $scope.id;
     };
 
-    var boxDimension = {
-      width: 770,//$('.slideshow-image').width(),
-      height: window.innerHeight * .75//$('.slideshow-image').height()
-    }
+    var selectImage = function() {
+      $scope.image = $scope.images.filter(pickSelectedImage)[0];
+      getImageScale();
+    };
 
-    if (origDimension.width < origDimension.height) {
-      $scope.scaleDimension = {
-        width: imageAdjustX(origDimension.width,origDimension.height,boxDimension.height),
-        height: boxDimension.height
+
+
+    var imageAdjustX = function(origX,origY,scaleY) {
+        return (scaleY * origX) / origY;
+    };
+
+    var imageAdjustY = function(origX,origY,scaleX) {
+        return (scaleX * origY) / origX;
+    };
+
+    var getImageScale = function() {
+      var image,origDimension;
+
+      image = new Image();
+      image.src = $scope.image.imageurl
+      origDimension = {
+          width: image.naturalWidth,
+          height: image.naturalHeight
+      };
+
+      var boxDimension = {
+        width: //770,//
+        $('.slideshow-image').width(),
+        height: //window.innerHeight * .75//
+        $('.slideshow-image').height()
       }
-    }
-    else {
-      $scope.scaleDimension = {
-        width: boxDimension.width,
-        height: imageAdjustY(origDimension.width,origDimension.height,boxDimension.width)
+
+      var tempWidth = imageAdjustX(origDimension.width,origDimension.height,boxDimension.height)
+
+      if (origDimension.width < origDimension.height) {
+        $scope.scaleDimension = {
+          width: tempWidth,
+          height: boxDimension.height
+        }
       }
-    }
+      else {
+        $scope.scaleDimension = {
+          width: tempWidth < boxDimension.width ? tempWidth : boxDimension.width,
+          height: imageAdjustY(origDimension.width,origDimension.height,boxDimension.width)
+        }
+      }
 
-    // console.log(origDimension,$scope.scaleDimension,boxDimension);
+      // console.log(origDimension,$scope.scaleDimension,boxDimension);
 
 
-    $scope.infoX = (boxDimension.width - $scope.scaleDimension.width) / 2
-    $scope.infoY = (boxDimension.height - $scope.scaleDimension.height) / 2
-  };
+      $scope.infoX = (boxDimension.width - $scope.scaleDimension.width) >= 0 ? (boxDimension.width - $scope.scaleDimension.width) / 2 : 0
+      $scope.infoY = (boxDimension.height - $scope.scaleDimension.height) >= 0 ? (boxDimension.height - $scope.scaleDimension.height) / 2 : 0
+    };
 
 
-  $scope.navigateRight = function(id) {
-    var index = $scope.images.findIndex(function(value){
-      return value.id === id
+    $scope.navigateRight = function(id) {
+      var index = $scope.images.findIndex(function(value){
+        return value.id === id
+      });
+      index = index + 1 > $scope.images.length - 1 ? 0 : index + 1;
+      $scope.id = $scope.images[index].id;
+      $scope.image = $scope.images.filter(pickSelectedImage)[0];
+
+      getImageScale();
+
+    };
+
+    $scope.navigateLeft = function(id) {
+      var index = $scope.images.findIndex(function(value){
+        return value.id === id
+      });
+      index = index - 1 < 0 ? $scope.images.length - 1 : index - 1;
+      $scope.id = $scope.images[index].id;
+      $scope.image = $scope.images.filter(pickSelectedImage)[0];
+
+      getImageScale();
+
+    };
+
+    selectImage();
+
+    $( window ).resize(function() {
+      getImageScale();
     });
-    index = index + 1 > $scope.images.length - 1 ? 0 : index + 1;
-    $scope.id = $scope.images[index].id;
-    $scope.image = $scope.images.filter(pickSelectedImage)[0];
 
-    getImageScale();
-
-  };
-
-  $scope.navigateLeft = function(id) {
-    var index = $scope.images.findIndex(function(value){
-      return value.id === id
-    });
-    index = index - 1 < 0 ? $scope.images.length - 1 : index - 1;
-    $scope.id = $scope.images[index].id;
-    $scope.image = $scope.images.filter(pickSelectedImage)[0];
-
-    getImageScale();
-
-  };
-
-  selectImage();
-
-  $( window ).resize(function() {
-    getImageScale();
   });
 
 });

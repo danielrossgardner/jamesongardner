@@ -2,6 +2,10 @@
 
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
+.html, .body {
+  overflow: hidden;
+}
+
 .btn {
   border-radius: 0;
   border: none;

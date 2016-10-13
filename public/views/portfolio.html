@@ -1,26 +1,28 @@
-<div class="main-container art-container" masonry-directive images-modal>
-  <div class="menu-bar">
-    <ul>
-      <li class="navigation" ui-sref="home">HOME</li>
-      <div class="menu-bar-separator">|</div>
-      <li class="navigation" ui-sref="{{pageLink}}">{{page}}</li>
-      <div class="menu-bar-separator">|</div>
-      <li class="navigation">STORE</li>
-      <div class="menu-bar-separator">|</div>
-      <li class="navigation">BLOG</li>
-      <div class="menu-bar-separator">|</div>
-      <li class="navigation" ui-sref="about">ABOUT</li>
-      <div class="menu-bar-separator">|</div>
-      <li class="navigation" ui-sref="contact">CONTACT</li>
-    </ul>
-  </div>
-  <!-- <div class="loader-holder">
-    <div class="loader">
+<div class="overflow">
+  <div class="main-container art-container" masonry-directive images-modal>
+    <div class="menu-bar">
+      <ul>
+        <li class="navigation" ui-sref="home">HOME</li>
+        <div class="menu-bar-separator">|</div>
+        <li class="navigation" ui-sref="{{pageLink}}">{{page}}</li>
+        <div class="menu-bar-separator">|</div>
+        <li class="navigation">STORE</li>
+        <div class="menu-bar-separator">|</div>
+        <li class="navigation">BLOG</li>
+        <div class="menu-bar-separator">|</div>
+        <li class="navigation" ui-sref="about">ABOUT</li>
+        <div class="menu-bar-separator">|</div>
+        <li class="navigation" ui-sref="contact">CONTACT</li>
+      </ul>
+    </div>
+    <!-- <div class="loader-holder">
+      <div class="loader">
 
-    </div>
-  </div> -->
-    <div class="grid">
-      <div class="grid-sizer"></div>
-      <div ng-repeat="image in images" class="grid-item" ng-click="showModal(image.id,images)"><img ng-src="{{image.imageurl}}" alt={{image.title}} /></div>
-    </div>
+      </div>
+    </div> -->
+      <div class="grid">
+        <div class="grid-sizer"></div>
+        <div ng-repeat="image in images" class="grid-item" ng-click="showModal(image.id,images)"><img ng-src="{{image.imageurl}}" alt={{image.title}} /></div>
+      </div>
+  </div>
 </div>
