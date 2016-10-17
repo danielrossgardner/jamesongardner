@@ -1,0 +1,39 @@
+.about-container {
+  height: calc(100vh - 281px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-top: 65px;
+}
+.about-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.about-text-container {
+  height: 535px;
+  width: 400px;
+  padding: 60px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  text-align: justify;
+  line-height: 150%;
+}
+.about-image-container {
+  background-color: rgba(255,255,255,0.34);
+  height: 535px;
+  width: 400px;
+  /*Flex*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.about-image {
+  height: 476px;
+  width: 340px;
+  margin: auto;
+}
+.about-image img {
+  display:block;
+  max-width: 100%;
+  max-height: 100%;
+}

@@ -109,7 +109,6 @@ angular.module('jamesonart').service('primaryService', function($http,$state){
   };
 
     this.editDescription = function(id,description) {
-      console.log(id,description);
       return $http({
         method: 'PUT',
         url: '/image/description/'+id,
@@ -119,5 +118,53 @@ angular.module('jamesonart').service('primaryService', function($http,$state){
       });
     };
 
+    /////////////////////////ETSY SHOP////////////////////////////
+
+    this.getListings = function() {
+      return $http({
+        method: 'JSONP',
+        url: 'https://openapi.etsy.com/v2/shops/GardnerArtandStuff/listings/active.js?api_key=zotf7b2hve76lo0a5lwasqxp&callback=JSON_CALLBACK'
+      }).success(function(response){
+        return response;
+      });
+    };
+
+    this.getListingImages = function(listingId) {
+      return $http({
+        method: 'JSONP',
+        url: 'https://openapi.etsy.com/v2/listings/' + listingId + '/images.js?api_key=zotf7b2hve76lo0a5lwasqxp&callback=JSON_CALLBACK'
+      }).success(function(response){
+        return response;
+      });
+    };
+
+    /////////////////////////MESSAGES////////////////////////////
+    this.logMessage = function(messageData) {
+      return $http({
+        method: 'POST',
+        url: '/message',
+        data: messageData
+      }).then(function(res){
+        return res.data;
+      });
+    };
+
+    this.getMessages = function() {
+      return $http({
+        method: 'GET',
+        url: '/message'
+      }).then(function(res){
+        return res.data;
+      });
+    };
+
+    this.removeMessage = function(id) {
+      return $http({
+        method: 'PUT',
+        url: '/message/'+id
+      }).then(function(res){
+        return res.data;
+      });
+    };
 
 });

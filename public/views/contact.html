@@ -1,1 +1,41 @@
-<div class="main-container"></div>
+<div class="main-container contact-container">
+  <div class="menu-bar about-menu-bar">
+    <ul>
+      <li class="navigation" ui-sref="home">HOME</li>
+      <div class="menu-bar-separator">|</div>
+      <li class="navigation" ui-sref="traditional">TRADITIONAL</li>
+      <div class="menu-bar-separator">|</div>
+      <li class="navigation" ui-sref="dimensional">DIMENSIONAL</li>
+      <div class="menu-bar-separator">|</div>
+      <li class="navigation">BLOG</li>
+      <div class="menu-bar-separator">|</div>
+      <li class="navigation" ui-sref="store">STORE</li>
+      <div class="menu-bar-separator">|</div>
+      <li class="navigation" ui-sref="about">ABOUT</li>
+    </ul>
+  </div>
+
+  <div class="contact-form-container">
+    <form ng-submit="logMessage()"  name="logMessageForm">
+      <div class="contact-section-group">
+        <div class="contact-section1">
+          Name<br>
+          <input type="text" name="name" ng-model="name"><br>
+          <br>
+          Email<br>
+          <input type="text" name="mail" ng-model="email">
+        </div>
+        <div class="contact-section2">
+          If you are interested in hiring Jameson for an illustration job or for private commission please send a message. Jameson will get back to you shortly.
+        </div>
+      </div>
+      <div class="contact-section3">
+        Message<br>
+        <textarea name="message" ng-model="message"></textarea><br><br>
+        <input type="submit" value="Send">
+        <input type="reset" value="Reset">
+      </div>
+
+    </form>
+  </div>
+</div>

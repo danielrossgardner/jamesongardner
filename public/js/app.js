@@ -1,7 +1,7 @@
 var jamesonart = angular.module('jamesonart', ['ui.router','ui.bootstrap','ngAnimate', 'ngSanitize']);
 
 
-jamesonart.config(function($stateProvider,$urlRouterProvider){
+jamesonart.config(function($stateProvider,$urlRouterProvider,$httpProvider){
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
@@ -26,7 +26,13 @@ jamesonart.config(function($stateProvider,$urlRouterProvider){
     .state('contact',{
       url: '/contact',
       templateUrl: './views/contact.html',
-      // controller: 'homeCtrl',
+      controller: 'contactCtrl',
+      restricted: false
+    })
+    .state('store',{
+      url: '/store',
+      templateUrl: './views/store.html',
+      controller: 'storeCtrl',
       restricted: false
     })
     .state('traditional',{

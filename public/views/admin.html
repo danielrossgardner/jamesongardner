@@ -9,6 +9,8 @@
     <ul>
       <li ng-click="showAddImages()">ADD IMAGE</li><br>
       <li ng-click="showEditImages()">EDIT IMAGE</li><br>
+      <li ng-click="showMessages()">MESSAGES</li>
+      <hr>
       <li ui-sref="home">HOME</li><br>
       <li ui-sref="traditional">TRADITIONAL</li><br>
       <li ui-sref="dimensional">DIMENSIONAL</li><br>
@@ -16,7 +18,7 @@
       <li>BLOG</li><br>
       <li ui-sref="about">ABOUT</li><br>
       <li ui-sref="contact">CONTACT</li>
-      <br>
+      <hr>
       <li ng-click="logout()">LOGOUT</li>
     </ul>
   </div>
@@ -25,6 +27,9 @@
     </div>
     <div class="admin-tab">
       <edit-image ng-show="editImagesVisibility"></edit-image>
+    </div>
+    <div class="admin-tab">
+      <messages-edit ng-show="editMessagesVisibility"></messages-edit>
     </div>
 
 

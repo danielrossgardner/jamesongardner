@@ -29,3 +29,7 @@
   border: none;
   box-shadow: none;
 }
+
+strong {
+  font-weight: 700;
+}

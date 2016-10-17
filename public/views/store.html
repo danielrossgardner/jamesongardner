@@ -1,0 +1,53 @@
+<div class="main-container store-container">
+  <div class="menu-bar">
+    <ul>
+      <li class="navigation" ui-sref="home">HOME</li>
+      <div class="menu-bar-separator">|</div>
+      <li class="navigation" ui-sref="traditional">TRADITIONAL</li>
+      <div class="menu-bar-separator">|</div>
+      <li class="navigation" ui-sref="dimensional">DIMENSIONAL</li>
+      <div class="menu-bar-separator">|</div>
+      <li class="navigation">BLOG</li>
+      <div class="menu-bar-separator">|</div>
+      <li class="navigation" ui-sref="about">ABOUT</li>
+      <div class="menu-bar-separator">|</div>
+      <li class="navigation" ui-sref="contact">CONTACT</li>
+    </ul>
+  </div>
+
+  <div class="listing-container">
+      <div class="listing" ng-repeat="item in listings">
+        <div class="listing-image">
+          <img ng-src="{{item.images[0].url}}" alt="{{item.title}}" />
+        </div>
+        <div class="listing-basic-info">
+          <div class="listing-title">
+            {{item.title}}
+          </div>
+          <div class="listing-price">
+            ${{item.price}}
+          </div>
+          <div class="listing-more-info">
+            <div id="triangle-down">
+
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+      <!-- {{item.category_path}}
+      {{item.title}}
+      {{item.description}}
+      {{item.currency_code}}
+      {{item.item_dimensions_unit}}
+      {{item.item_height}}
+      {{item.item_length}}
+      {{item.item_width}}
+      {{item.materials}}
+      {{item.price}}
+      {{item.quantity}}
+      {{item.url}}
+      {{item.images[0]}}
+      {{item.user_id}}
+      {{item.listing_id}} -->
+</div>

@@ -111,6 +111,47 @@ app.delete('/image/:id',function(req,res){
 
 
 ///////////////-------------------------------------------------------/
+
+
+//// ETSY SHOP ////
+///////////////-------------------------------------------------------\
+///////////////-------------------------------------------------------/
+
+//// MESSAGES ////
+///////////////-------------------------------------------------------\
+  app.post('/message',function(req,res){
+    db.log_message([req.body.name,req.body.email,req.body.message,false],function(err,success){
+      if (err){
+        console.log(err);
+        res.sendStatus('500')
+      }
+      else {
+        res.sendStatus('201');
+      }
+    })
+  });
+
+  app.get('/message',function(req,res){
+    db.get_messages(function(err,success){
+      res.status(200).json(success);
+    });
+  });
+
+  app.put('/message/:id',function(req,res){
+    db.mark_message_read([req.params.id],function(err,success){
+      if (err){
+        console.log(err);
+        res.sendStatus('500')
+      }
+      else {
+        res.sendStatus('200');
+      }
+    });
+  });
+///////////////-------------------------------------------------------/
+
+//// LOCAL AUTH ////
+///////////////-------------------------------------------------------\
 passport.use(new LocalStrategy(
   function(username, password, done) {
     db.getUserByUsername([username], function(err, user) {
@@ -159,7 +200,7 @@ app.get('/auth/logout', function(req, res) {
   res.redirect('/');
 })
 
-
+///////////////-------------------------------------------------------/
 
 
 app.listen(config.port,function(){

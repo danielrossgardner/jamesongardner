@@ -1,4 +1,4 @@
-angular.module('jamesonart').controller('homeCtrl', function($scope, primaryService, $timeout) {
+angular.module('jamesonart').controller('homeCtrl', function($scope, $timeout) {
   $scope.traditionalVisibility = true;
   $scope.dimensionalVisibility = true;
   $scope.storeVisibility = true;
@@ -37,5 +37,8 @@ angular.module('jamesonart').controller('homeCtrl', function($scope, primaryServ
   $timeout(showBlog, 1600);
   $timeout(showAbout, 2000);
   $timeout(showContact, 2400);
+
+
+
 
 });

@@ -170,7 +170,7 @@ footer {
 
 
 
-@media (min-width: 768px) {
+@media (min-width: 775px) {
   header {
     height: 166px;
     background-color: rgba(255,255,255,0);

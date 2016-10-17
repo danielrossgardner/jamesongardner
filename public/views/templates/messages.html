@@ -1,0 +1,19 @@
+<div class="messages-container">
+  <div class="message" ng-repeat="message in messages">
+    <div class="message-time message-line">
+        <strong>Sent:</strong> {{message.sentdate}} <strong>@</strong> {{message.senttime}}
+      <div class="message-remove" ng-click="removeMessage(message.id)">
+        REMOVE
+      </div>
+    </div>
+    <div class="message-from  message-line">
+      <strong>From:</strong> {{message.name}}
+    </div>
+    <div class="message-contact  message-line">
+      <strong>Email:</strong> {{message.email}}
+    </div>
+    <div class="message-text  message-line">
+      <strong>Message:</strong> <br>{{message.message}}
+    </div>
+  </div>
+</div>
