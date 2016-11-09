@@ -4,7 +4,9 @@ const express = require('express'),
       massive = require('massive'),
       passport = require('passport'),
       LocalStrategy = require('passport-local').Strategy,
-      config = require('./config.js'),
+      config = {  secret: 'hemmeligtingmaaholdeshemmelig',
+        port: 8181,
+        pgresPwrd: 'glaringgreengeeseglide'}//require('./config.js'),
       cors = require('cors');
       pg = require('pg');
 
