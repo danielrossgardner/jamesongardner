@@ -23,7 +23,7 @@ app.use(express.static('./public'));
 
 /// DATABASE ///
 ///////////////-------------------------------------------------------\
-var connectionString = "postgres://postgres:" + config.pgresPwrd + "@localhost:5432/jamesonart";
+var connectionString = process.env.DATABASE_URL ? process.env.DATABASE_URL : "postgres://postgres:" + config.pgresPwrd + "@localhost:5432/jamesonart";
 var massiveInstance = massive.connectSync({connectionString: connectionString});
 app.set('db', massiveInstance);
 

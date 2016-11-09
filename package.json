@@ -28,7 +28,6 @@
     "gulp-babel": "^6.1.2",
     "gulp-concat": "^2.6.0",
     "gulp-sass": "^2.3.2",
-    "masonry": "0.0.2",
     "massive": "^2.5.0",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
