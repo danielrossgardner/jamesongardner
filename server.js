@@ -203,6 +203,6 @@ app.get('/auth/logout', function(req, res) {
 ///////////////-------------------------------------------------------/
 
 
-app.listen(config.port,function(){
+app.listen(process.env.PORT || config.port,function(){
   console.log('listening on port '+config.port)
 })
