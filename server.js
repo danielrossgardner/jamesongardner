@@ -157,7 +157,7 @@ app.delete('/image/:id',function(req,res){
 ///////////////-------------------------------------------------------\
 passport.use(new LocalStrategy(
   function(username, password, done) {
-    db.getUserByUsername([username], function(err, user) {
+    db.get_user_by_username([username], function(err, user) {
       user = user[0];
       if (err) { return done(err); }
       if (!user) { return done(null, false); }
@@ -175,7 +175,7 @@ passport.serializeUser(function(user, done) {
 // used when coming into the server
 passport.deserializeUser(function(id, done) {
   // need to fix here
-  db.getUserById([id], function(err, user) {
+  db.get_user_by_id([id], function(err, user) {
     user = user[0];
     if (err) {console.log('passport deserialize user error', err)}
     else {
