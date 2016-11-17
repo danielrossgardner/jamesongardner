@@ -64,16 +64,19 @@
   }
 
   /******************** LOADER ********************/
-  /*.loader-holder {
-    width: 770px;
-    height: calc(100% - 100px - 13.5vh);
-    margin: auto;
+  .grid-cover {
+    position: fixed;
+    width: 100%;
+    height: calc(100vh - 281px);
+    background-color: black;
     z-index: 3;
-    background: rgba(0,0,0,.9);
-    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+
+  .invisible {
+    display: none;
   }
 
   .loader:before,
@@ -132,7 +135,7 @@
     40% {
       box-shadow: 0 2.5em 0 0;
     }
-  }*/
+  }
   /************************************************/
 
 

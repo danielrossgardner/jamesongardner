@@ -18,13 +18,13 @@ angular.module('jamesonart')
                  $timeout(function() {
                    $('.grid').masonry('reloadItems');
                    $('.grid').masonry('layout');
-                 },500)
+                 },3000)
               });
 
 
            $timeout(function() {
              $('.loader-holder').css('display', 'none');
-           },1500)
+           },3000)
 
          });
 

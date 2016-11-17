@@ -1,4 +1,4 @@
-angular.module('jamesonart').controller('traditionalCtrl',function($scope,primaryService){
+angular.module('jamesonart').controller('traditionalCtrl',function($scope,primaryService,$timeout){
 
   $scope.page = 'DIMENSIONAL'
 
@@ -7,6 +7,9 @@ angular.module('jamesonart').controller('traditionalCtrl',function($scope,primar
   $scope.getArt = function(type){
     primaryService.getArt(type).then(function(response){
       $scope.images = response;
+      $timeout(function() {
+        $scope.invisible = "invisible"
+      },3000);
     })
   }
 
