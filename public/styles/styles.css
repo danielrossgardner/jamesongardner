@@ -18,6 +18,7 @@ header {
   flex-direction: row;
   justify-content: space-between;
 }
+
 .menu-placeholder {
   height: 100px;
   width: 100px;
@@ -35,7 +36,6 @@ header {
   z-index: 1;
 }
 
-
 .HAM {
   height: 50px;
   width: 115px;
@@ -47,6 +47,7 @@ header {
   top: 10px;
   right: 3%;
 }
+
 .main-container {
   height: calc(87vh - 50px);
   /*Flex*/
@@ -54,11 +55,13 @@ header {
   flex-direction: column;
   justify-content: center;
 }
+
 .mobile-menu {
   position: fixed;
   right: 0;
   z-index: 3;
 }
+
 .mobile-menu li {
   background-color: rgba(255,255,255,0.5);
   font-family: 'Raleway', sans-serif;
