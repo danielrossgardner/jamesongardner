@@ -64,9 +64,9 @@
 @media (min-width: 768px) {
   .home-main-container{
     /*Flex*/
-    display: flex;
+    /*display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
   }
   .home-page-container{
     /*Flex*/
