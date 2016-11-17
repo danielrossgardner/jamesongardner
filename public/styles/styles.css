@@ -162,7 +162,17 @@ footer {
 }
 
 .social-icon a:hover {
-    color: #4CAF50; /* Green */
+  color: #4CAF50; /* Green */
+}
+
+a {
+  text-decoration: none;
+  color:inherit;
+}
+
+a:hover {
+  text-decoration: none;
+  color:inherit;
 }
 
 /*Standard media changes are at:
@@ -186,8 +196,8 @@ footer {
   .primary-logo {
     height: 200px;
     width: 500px;
-    left: 200px;
-    top: 25px;
+    /*left: 200px;
+    top: 25px;*/
   }
   .HAM {
     display: none;
