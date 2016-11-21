@@ -14,7 +14,7 @@ angular.module('jamesonart')
                  gutter: 10
                })
 
-               $grid.imagesLoaded(function () {
+               $grid.imagesLoaded().progress(function (instance,image) {
                  $timeout(function() {
                    $('.grid').masonry('reloadItems');
                    $('.grid').masonry('layout');
