@@ -14,7 +14,7 @@ angular.module('jamesonart')
                  gutter: 10
                })
 
-               $grid.imagesLoaded().progress(function (instance,image) {
+               $grid.imagesLoaded().always(function (instance,image) {
                  $timeout(function() {
                    $('.grid').masonry('reloadItems');
                    $('.grid').masonry('layout');
@@ -24,7 +24,7 @@ angular.module('jamesonart')
 
            $timeout(function() {
              $('.loader-holder').css('display', 'none');
-           },3000)
+           },3100)
 
          });
 
